@@ -1,0 +1,27 @@
+version: '3'
+
+services: 
+    simple-fe:
+        build: 
+            context: .
+            dockerfile: Dockerfile.dev # viene specificato il nome del file dentro la cartella corrente indicata tramite il contex, poichè ha un estenzione e un nome diverso da Dockerfile
+        ports:
+            - 4000:3000
+        volumes: 
+            - /app/node_modules
+            - .:/app
+        environment:
+            - CHOKIDAR_USEPOLLING=true # Windows non rileva automaticamente i cambiamenti, bisogna aggiungere questa variabile per permettelo
+    tests-fe:
+        build: 
+            context: .
+            dockerfile: Dockerfile.dev
+        ports:
+            - 4000:3000
+        volumes: 
+            - /app/node_modules
+            - .:/app
+        environment:
+            - CHOKIDAR_USEPOLLING=true # Windows non rileva automaticamente i cambiamenti, bisogna aggiungere questa variabile per permettelo
+        command: ["npm", "test"]
+        
