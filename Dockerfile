@@ -5,9 +5,9 @@
 # When we deploy to AWS this currently will fail quindi non va messo
 FROM node:alpine 
 
-WORKDIR /usr
+WORKDIR '/usr'
 
-COPY package.json .
+COPY package*.json ./
 RUN npm install
 COPY . .
 
