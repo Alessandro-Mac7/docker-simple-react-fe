@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t alessandromacri/docker-simple-react-fe  -f Dockerfile.dev .
+  - docker build -t alessandromacri/docker-simple-react-fe -f Dockerfile.dev .
 
 script:
   - docker run -e CI=true alessandromacri/docker-simple-react-fe npm test
