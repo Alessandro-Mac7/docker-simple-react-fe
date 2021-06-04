@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
-CMD ["npm","run","buld"]
+RUN npm run build
 
 # STEP 2
 # ci interessa solo il risultato di /app/build generato
