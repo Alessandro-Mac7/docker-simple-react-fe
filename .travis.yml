@@ -12,10 +12,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "docker-simple-react-fe"
-  env: "Dockersimplereactfe-env"
+  app: "docker-simple-fe"
+  env: "Dockersimplefe-env"
   bucket_name: "elasticbeanstalk-us-east-2-887002784570"
-  bucket_path: "docker-simple-react-fe"
+  bucket_path: "docker-simple-fe"
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY

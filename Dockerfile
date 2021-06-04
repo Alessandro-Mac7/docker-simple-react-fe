@@ -3,7 +3,6 @@
 
 # STEP 1
 # When we deploy to AWS this currently will fail quindi non va messo
-# FROM node:alpine as builder 
 FROM node:alpine 
 
 WORKDIR /usr
